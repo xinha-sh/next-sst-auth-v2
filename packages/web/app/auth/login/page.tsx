@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { login } from "../action";
 
 export default function Login() {
   return (
@@ -30,7 +31,7 @@ export default function Login() {
             <div className="grid gap-6">
               <form
                 action={`${process.env.NEXT_PUBLIC_AUTH_URL!}/code/authorize`}
-                method="post"
+                method="POST"
               >
                 <div className="grid gap-2">
                   <div className="grid gap-1">
@@ -64,8 +65,10 @@ export default function Login() {
                 </div>
               </div>
               <form
-                method="GET"
-                action={`${process.env.NEXT_PUBLIC_AUTH_URL}/google/authorize`}
+                action={async () => {
+                  "use server"
+                  await login("google")
+                }}
               >
                 <Button variant="outline" className="w-full" type="submit">
                   <Icons.google className="mr-2 h-4 w-4" />

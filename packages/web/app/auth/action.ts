@@ -27,7 +27,7 @@ export async function auth() {
   return verified.subject;
 }
 
-export async function login() {
+export async function login(provider?: "google" | "facebook") {
   const cookies = await getCookies();
   const accessToken = cookies.get("access_token");
   const refreshToken = cookies.get("refresh_token");
@@ -46,7 +46,7 @@ export async function login() {
   const host = headers.get("host");
   const { url } = await client.authorize(
     `https://${host}/api/callback`,
-    "code"
+    "code", provider ? {provider} : undefined
   );
   redirect(url);
 }
