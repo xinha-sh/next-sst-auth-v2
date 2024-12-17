@@ -1,0 +1,78 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 80,
+		"attributePosition": "auto"
+	},
+	"organizeImports": { "enabled": true },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"noUnusedTemplateLiteral": "off",
+				"noNonNullAssertion": "off",
+				"noParameterAssign": "off"
+			},
+			"correctness": {
+				"noChildrenProp": "off",
+				"useExhaustiveDependencies": "off",
+				"noUnsafeOptionalChaining": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"useAltText": "off",
+				"useKeyWithClickEvents": "off",
+				"useAriaPropsForRole": "off",
+				"useSemanticElements": "warn"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off",
+				"noExplicitAny": "off",
+				"noShadowRestrictedNames": "off",
+				"useNamespaceKeyword": "off"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"complexity": {
+				"noForEach": "off",
+				"noBannedTypes": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "es5",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"quoteStyle": "double",
+			"attributePosition": "auto"
+		}
+	},
+	"files": {
+		"ignore": [
+			"node_modules",
+			"**/node_modules/**",
+			".sst",
+			".open-next",
+			".next",
+			"dist",
+			"build",
+			"bin",
+			"infra",
+			"sst.config.ts",
+			"sst-env.d.ts"
+		],
+		"ignoreUnknown": true
+	}
+}

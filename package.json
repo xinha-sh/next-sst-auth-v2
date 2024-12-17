@@ -1,0 +1,23 @@
+{
+  "name": "next-sst-auth-v2",
+  "version": "0.0.0",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "dev": "sst dev"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/aws-lambda": "8.10.146",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "sst": "3.4.16",
+    "valibot": "^1.0.0-beta.9",
+    "@openauthjs/openauth": "^0.2.4"
+  }
+}
